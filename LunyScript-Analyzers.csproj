@@ -1,6 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" TreatAsLocalProperty="Configuration">
 
     <PropertyGroup>
+        <!-- Force this project to always build as Release -->
+        <Configuration>Release</Configuration>
+        <Configurations>Release</Configurations>
+
         <TargetFramework>netstandard2.0</TargetFramework>
         <RootNamespace>LunyScript_Analyzers</RootNamespace>
         <LangVersion>9</LangVersion>
@@ -11,10 +15,18 @@
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" />
     </ItemGroup>
 
-    <!--
-    <ItemGroup>
-        <Compile Include="..\Luny\**\*.cs" Link="..\Luny\**\*.cs" />
-    </ItemGroup>
-    -->
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Copy
+            SourceFiles="$(TargetPath)"
+            DestinationFolder="..\LunyScript\Analyzers\"
+            OverwriteReadOnlyFiles="true"
+            SkipUnchangedFiles="false" />
+    </Target>
+
+<!-- tried to include .cs but fails to build even with Polysharp
+<ItemGroup>
+    <Compile Include="..\Luny\**\*.cs" Link="..\Luny\**\*.cs" />
+</ItemGroup>
+-->
     
 </Project>
