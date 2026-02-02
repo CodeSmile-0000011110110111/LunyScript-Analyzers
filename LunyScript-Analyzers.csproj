@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>LunyScript_Analyzers</RootNamespace>
+        <LangVersion>9</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" />
+    </ItemGroup>
+
+    <!--
+    <ItemGroup>
+        <Compile Include="..\Luny\**\*.cs" Link="..\Luny\**\*.cs" />
+    </ItemGroup>
+    -->
+    
+</Project>
