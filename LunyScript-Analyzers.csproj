@@ -6,7 +6,7 @@
         <Configurations>Release</Configurations>
 
         <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>LunyScript_Analyzers</RootNamespace>
+        <RootNamespace>LunyScript.Analyzers</RootNamespace>
         <LangVersion>9</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>

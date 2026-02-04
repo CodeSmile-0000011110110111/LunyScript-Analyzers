@@ -1,7 +1,4 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System;
-using System.IO;
 
 namespace LunyScript.Analyzers
 {
@@ -9,11 +6,12 @@ namespace LunyScript.Analyzers
 	public sealed class LunyScriptGenerator : IIncrementalGenerator
 	{
 		public void Initialize(GeneratorInitializationContext context) {}
+
 		public void Initialize(IncrementalGeneratorInitializationContext context)
 		{
 			/*
 			var provider = context.SyntaxProvider.CreateSyntaxProvider(
-				predicate: (node, _) => node is ClassDeclarationSyntax c 
+				predicate: (node, _) => node is ClassDeclarationSyntax c
 					//&& c.Identifier.Text == "MyTargetClass"
 					,
 				transform: (ctx, _) => ctx.Node.ToString() // Or extract specific data
