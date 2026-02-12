@@ -9,6 +9,7 @@
         <RootNamespace>LunyScript.Analyzers</RootNamespace>
         <LangVersion>9</LangVersion>
         <Nullable>enable</Nullable>
+        <DefaultItemExcludes>$(DefaultItemExcludes);bin\**;obj\**</DefaultItemExcludes>
     </PropertyGroup>
 
     <ItemGroup>
